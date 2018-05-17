@@ -1,0 +1,15 @@
+<div id="search-component">
+
+<div class="input-group">
+  <input #searchBox class="form-control"
+         placeholder="Hero Search"  (keyup)="search(searchBox.value)"   >
+  <div class="input-group-addon" ><i class="fa fa-search"></i></div>
+</div>
+ <ul class="search-result"id="dropdown-basic"  >
+    <li *ngFor="let hero of heroes$ | async" >
+      <a routerLink="/detail/{{hero.id}}" class="search-result">
+        {{hero.name}}
+      </a>
+    </li>
+  </ul>
+</div>
